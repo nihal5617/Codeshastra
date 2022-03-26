@@ -32,10 +32,12 @@ export default function Sidebar() {
               Current Projects
             </li>
             </Link>
+            <Link to="/past" className="link">
             <li className="sidebarListItem">
               <Apartment className="sidebarIcon" />
               Past Projects
             </li>
+            </Link>
             {/* <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
               Sales

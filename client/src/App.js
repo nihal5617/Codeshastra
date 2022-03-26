@@ -12,6 +12,7 @@ import User from "./pages/user/User";
 import { useState, React, useEffect } from "react";
 import OcrAttendance from "./components/OcrAttendance/OcrAttendance";
 import WorkersData from "./components/WorkersData/WorkersData";
+import PastProjects from "./components/PastProjects/PastProjects";
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
@@ -34,6 +35,7 @@ function App() {
               <Route path="/attendance" element={<UserList />} />
               <Route path="/ocr" element={<OcrAttendance />} />
               <Route path="/data" element={<WorkersData/>}/>
+              <Route path="/past" element={<PastProjects/>}/>
             </Routes>
           </div>
         </BrowserRouter>
