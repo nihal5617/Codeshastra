@@ -10,6 +10,9 @@ class User(AbstractUser):
     email = models.CharField(max_length=255, unique=True)
     lastname = models.CharField(max_length=255, null=True)
     img = models.ImageField(null=True)
+    phone = models.CharField(max_length=255, null=True)
+    address = models.CharField(max_length=255, null=True)
+
     username = None
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
@@ -19,6 +22,7 @@ class Contractor(User):
     Present = models.IntegerField(default=0)
     Violations = models.IntegerField(default=0)
     Absent = models.IntegerField(default=0)
+    Past_Project = models.IntegerField(default=0)
 
 
 class Project(models.Model):
@@ -36,6 +40,7 @@ class Worker(User):
     Absent = models.IntegerField(default=0)
     Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
     Project = models.OneToOneField(Project, on_delete=models.CASCADE)
+
 
 class Day(models.Model):
     date = models.DateField()
