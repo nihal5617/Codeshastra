@@ -29,13 +29,6 @@ export default function Home() {
       {/* <FeaturedInfo /> */}
       <Chart data={userData} title="Workers Attendance" grid dataKey="worker"/>
 
-      <Chart
-        data={userData}
-        title="Workers Attendance"
-        grid
-        dataKey="Active User"
-      />
-
       <Pchart title="Project Progress" grid datakey="Active User" />
       {/* <div className="homeWidgets">
         <WidgetSm/>
