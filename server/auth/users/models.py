@@ -36,3 +36,8 @@ class Worker(User):
     Absent = models.IntegerField(default=0)
     Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
     Project = models.OneToOneField(Project, on_delete=models.CASCADE)
+
+class Day(models.Model):
+    date = models.DateField()
+    Project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    worker = models.IntegerField(default=0)

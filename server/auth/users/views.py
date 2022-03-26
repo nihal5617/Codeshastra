@@ -1,9 +1,9 @@
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView
-from .serializers import UserSerializer, ContractorSerializer
+from rest_framework.generics import CreateAPIView, ListCreateAPIView
+from .serializers import UserSerializer, ContractorSerializer, DaySerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .models import User
+from .models import User, Day
 import datetime, jwt
 
 # Create your views here.
@@ -76,3 +76,8 @@ class LogOutView(APIView):
         res.delete_cookie("jwt")
         res.data = {"message": "success"}
         return res
+
+
+class DayView(ListCreateAPIView):
+    serializer_class = DaySerializer
+    queryset = Day.objects.filter(Project_id=1)
