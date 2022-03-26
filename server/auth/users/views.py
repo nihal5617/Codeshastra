@@ -33,10 +33,10 @@ class ContractorLoginView(APIView):
         res.set_cookie(
             key="jwt",
             value=token,
-            httponly=True,
-            samesite="None",
-            domain=None,
-            secure=True,
+            # httponly=True,
+            # samesite="None",
+            # domain=None,
+            # secure=True,
         )
         serializer = UserSerializer(user)
         serializer.data.pop("id", None)
@@ -45,6 +45,7 @@ class ContractorLoginView(APIView):
             "name": serializer.data["name"],
             "lastname": serializer.data["lastname"],
             "img": serializer.data["img"],
+            "jwt": token,
         }
         return res
 
@@ -83,6 +84,7 @@ class DayView(ListCreateAPIView):
 
 class ContractorView(APIView):
     def get(self, request):
+        print(request.COOKIES)
         token = request.COOKIES.get("jwt")
         print(token)
         if not token:
