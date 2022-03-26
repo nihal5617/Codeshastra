@@ -40,6 +40,7 @@ class Worker(User):
     Absent = models.IntegerField(default=0)
     Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
     Project = models.OneToOneField(Project, on_delete=models.CASCADE)
+    Aadhaar_no = models.CharField(max_length=20, null=True)
 
 
 class Day(models.Model):
