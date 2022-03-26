@@ -55,7 +55,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('#f0f0ff')} px={4} style={{ color: "#fffff" }}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -79,6 +79,7 @@ export default function Simple() {
             <Button onClick={logout}>Logout</Button>
             <Menu>
               <MenuButton
+                padding={10}
                 as={Button}
                 rounded={'full'}
                 variant={'link'}

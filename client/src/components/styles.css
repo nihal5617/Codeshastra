@@ -45,4 +45,10 @@ position: relative;
   }
   
 
-  
+  .css-w8mx6m{
+    background: none;
+    background-image: url(../assets/layered-waves-haikei.svg) !important;
+    background: no-repeat;
+    width: 100%;
+    height: 100%;
+}
