@@ -12,7 +12,7 @@ class User(AbstractUser):
     img = models.ImageField(null=True)
     phone = models.CharField(max_length=255, null=True)
     address = models.CharField(max_length=255, null=True)
-
+    title = models.CharField(max_length=255, null=True)
     username = None
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

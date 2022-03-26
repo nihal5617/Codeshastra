@@ -20,10 +20,10 @@ const initialState = {
   phone: "",
 };
 
-export default function User(props) {
+export default function User() {
   const [form, setForm] = useState(initialState);
-
-
+  let data = JSON.parse(localStorage.getItem("profile"));
+  console.log(data);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form)
@@ -55,20 +55,18 @@ return (
   <div className="user">
     <div className="userTitleContainer">
       <h1 className="userTitle">Edit User</h1>
-      <Link to="/newUser">
-        <button className="userAddButton">Create</button>
-      </Link>
+      
     </div>
     <div className="userContainer">
       <div className="userShow">
         <div className="userShowTop">
           <img
-            src={props.image}
+            src={data.image}
             alt=""
             className="userShowImg"
           />
           <div className="userShowTopTitle">
-            <span className="userShowUsername">{props.name}</span>
+            <span className="userShowUsername">{data.name}</span>
             <span className="userShowUserTitle">Contractor</span>
           </div>
         </div>
@@ -76,21 +74,21 @@ return (
           <span className="userShowTitle">Account Details</span>
           <div className="userShowInfo">
             <PermIdentity className="userShowIcon" />
-            <span className="userShowInfoTitle">{props.email}</span>
+            <span className="userShowInfoTitle">{data.email}</span>
           </div>
 
           <span className="userShowTitle">Contact Details</span>
           <div className="userShowInfo">
             <PhoneAndroid className="userShowIcon" />
-            <span className="userShowInfoTitle">{props.phone}</span>
+            <span className="userShowInfoTitle">{data.phone}</span>
           </div>
           <div className="userShowInfo">
             <MailOutline className="userShowIcon" />
-            <span className="userShowInfoTitle">{props.email}</span>
+            <span className="userShowInfoTitle">{data.email}</span>
           </div>
           <div className="userShowInfo">
             <LocationSearching className="userShowIcon" />
-            <span className="userShowInfoTitle">{props.address}</span>
+            <span className="userShowInfoTitle">{data.address}</span>
           </div>
         </div>
       </div>
@@ -161,7 +159,7 @@ return (
               </label>
               <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} />
             </div>
-            <button className="userUpdateButton" type="submit">Update</button>
+            <button className="userUpdateButton" type="submit">Create</button>
           </div>
         </form>
       </div>

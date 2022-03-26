@@ -51,6 +51,9 @@ class ContractorLoginView(APIView):
             "lastname": serializer.data["lastname"],
             "img": serializer.data["img"],
             "jwt": token,
+            "address": serializer.data["address"],
+            "phone": serializer.data["phone"],
+            "title": serializer.data["title"],
         }
         return res
 
