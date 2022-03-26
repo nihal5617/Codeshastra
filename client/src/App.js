@@ -18,7 +18,7 @@ function App() {
   // const location=useLocation();
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem('profile')));
-  })
+  },[user])
   return (<>
     {user ? (
       <BrowserRouter>
@@ -34,7 +34,6 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>) : (<BrowserRouter>
-
         <Routes>
           <Route path="/" element={<Auth />} />
         </Routes>
