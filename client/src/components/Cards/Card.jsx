@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function Card({name, position, pastProjects, onGoingProjects }) {
+export default function Card({name, position, pastProjects, onGoingProjects,image }) {
   return (
     <Center py={6}>
       <Box
@@ -40,7 +40,7 @@ export default function Card({name, position, pastProjects, onGoingProjects }) {
             <Avatar
               size={"xl"}
               src={
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                image
               }
               alt={"Author"}
               css={{

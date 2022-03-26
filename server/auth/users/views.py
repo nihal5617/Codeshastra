@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView, ListCreateAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveAPIView
 from .serializers import UserSerializer, ContractorSerializer, DaySerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
@@ -81,3 +81,11 @@ class LogOutView(APIView):
 class DayView(ListCreateAPIView):
     serializer_class = DaySerializer
     queryset = Day.objects.filter(Project_id=1)
+
+
+class ContractorView(RetrieveAPIView):
+    serializer_class = ContractorSerializer
+    
+    def get_queryset(self):
+        return User.objects.filter(id=self.kwargs["pk"])
+    
