@@ -6,13 +6,13 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import Pchart from "../../components/chart/Pchart";
 import Card from "../../components/Cards/Card";
-import { Flex } from "@chakra-ui/react";
+import { Flex, HStack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <div className="home">
       {/* <FeaturedInfo /> */}
-      <Flex>
+      <HStack spacing="24px">
         <Card
           name="Sahil Shetty"
           position="Contractor"
@@ -25,7 +25,7 @@ export default function Home() {
           pastProjects="28"
           onGoingProjects="4"
         />
-      </Flex>
+      </HStack>
 
       <Chart
         data={userData}
