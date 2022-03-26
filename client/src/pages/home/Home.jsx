@@ -29,7 +29,14 @@ export default function Home() {
       {/* <FeaturedInfo /> */}
       <Chart data={userData} title="Workers Attendance" grid dataKey="worker"/>
 
-      <Pchart title="Project Progress" grid datakey = "Active User" /> 
+      <Chart
+        data={userData}
+        title="Workers Attendance"
+        grid
+        dataKey="Active User"
+      />
+
+      <Pchart title="Project Progress" grid datakey="Active User" />
       {/* <div className="homeWidgets">
         <WidgetSm/>
         <WidgetLg/>
