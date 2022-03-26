@@ -7,6 +7,9 @@ import WidgetLg from "../../components/widgetLg/WidgetLg";
 import Pchart from "../../components/chart/Pchart";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "../../components/Cards/Card";
+import { Flex,HStack } from "@chakra-ui/react";
+import ProjectDetails from "../../components/Projectdetails/ProjectDetails";
 
 export default function Home() {
   const [userData, setUser] = useState([]);
@@ -27,7 +30,26 @@ export default function Home() {
   return (
     <div className="home">
       {/* <FeaturedInfo /> */}
+      <Flex>
+      <HStack spacing="24px">
+        <Card
+          name="Sahil Shetty"
+          position="Contractor"
+          pastProjects="17"
+          onGoingProjects="2"
+        />
+        <Card
+          name="Lance Correia"
+          position="Project Owner"
+          pastProjects="28"
+          onGoingProjects="4"
+        />
+        <ProjectDetails startDate="1-02-2022" endDate="1-5-2022" employees="20"  />
+        </HStack>
+      </Flex>
+      
       <Chart data={userData} title="Workers Attendance" grid dataKey="worker"/>
+      
 
       <Pchart title="Project Progress" grid datakey="Active User" />
       {/* <div className="homeWidgets">
