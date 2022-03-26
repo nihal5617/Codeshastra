@@ -1,0 +1,48 @@
+
+.footer {
+    padding: 5rem 0 2.5rem 0;
+    background-color: #000;
+    color: #fff;
+}
+.footer h3 {
+font-size: 18px;
+margin-bottom: 30px;
+}
+.footer ul li {
+margin-bottom: 10px;
+}
+.footer a {
+color: #fff;
+}
+.footer .copyright {
+margin-bottom: 0px;
+}
+.footer .copyright, .footer .credits {
+font-size: 14px;
+}
+.container {
+z-index: 2;
+position: relative;
+}
+.hero-section, .hero-section > .container > .row {
+    height: 100vh;
+    min-height: 880px;
+}
+
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s all ease;
+  }
+  
+  a:hover {
+    color: #fff;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: "Poppins", sans-serif;
+  }
+  
+
+  

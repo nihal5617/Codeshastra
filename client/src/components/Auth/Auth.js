@@ -19,6 +19,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signin, signuphere } from '../../action/auth';
+import { GoogleLogin } from "react-google-login";
 
 const initialState = {
     name: "",
@@ -39,18 +40,34 @@ const Auth = () => {
         setIsSignup(!isSignup);
     }
     const handleSubmit = (e) => {
+        e.preventDefault();
         if (isSignup) {
             console.log(form);
             dispatch(signuphere(form, history));
 
-          } else {
+        } else {
             dispatch(signin(form, history));
-          }
+        }
     }
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
+
+    const googleSuccess = async (res) => {
+        const result = res?.profileObj;
+        const token = res?.tokenId;
+        try {
+            dispatch({ type: 'AUTH', data: { result, token } });
+            history('/');
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    const googleError = (error) => {
+        console.log(error);
+        alert("Google Sign In was unsuccessful. Try again later");
+    };
 
     return (
         <Flex
@@ -60,9 +77,9 @@ const Auth = () => {
             bg={useColorModeValue('gray.50', 'gray.800')}>
             <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
                 <Stack align={'center'}>
-                    {isSignup?(<Heading fontSize={'4xl'} textAlign={'center'}>
+                    {isSignup ? (<Heading fontSize={'4xl'} textAlign={'center'}>
                         Sign up
-                    </Heading>):(<Heading fontSize={'4xl'} textAlign={'center'}>
+                    </Heading>) : (<Heading fontSize={'4xl'} textAlign={'center'}>
                         Login
                     </Heading>)}
                     <Text fontSize={'lg'} color={'gray.600'}>
@@ -143,6 +160,27 @@ const Auth = () => {
                                     </Button>
                                 </Stack>
                             )}
+                            <GoogleLogin
+                                clientId="983873906158-moqbtetckfo6ev76t591i5sagb40jr1a.apps.googleusercontent.com"
+                                render={(renderProps) => (
+                                    <Button
+                                        bg={'blue.400'}
+                                        color={'white'}
+                                        _hover={{
+                                            bg: 'blue.500',
+                                        }}
+                                        fullWidth
+                                        onClick={renderProps.onClick}
+                                        disabled={renderProps.disabled}
+                                        variant="contained"
+                                    >
+                                        Google Sign In
+                                    </Button>
+                                )}
+                                onSuccess={googleSuccess}
+                                onFailure={googleError}
+                                cookiePolicy="single_host_origin"
+                            />
                             {isSignup ? (
                                 <Stack pt={6}>
                                     <Text align={'center'}>
