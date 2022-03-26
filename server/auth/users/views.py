@@ -17,7 +17,6 @@ class ContractorLoginView(APIView):
         password = request.data["password"]
 
         user = User.objects.filter(email=email).first()
-
         if user is None:
             raise AuthenticationFailed("User not found!")
 
@@ -72,7 +71,6 @@ class UserView(APIView):
 class LogOutView(APIView):
     def post(self, request):
         res = Response()
-        print(res)
         res.delete_cookie("jwt")
         res.data = {"message": "success"}
         return res
@@ -83,9 +81,15 @@ class DayView(ListCreateAPIView):
     queryset = Day.objects.filter(Project_id=1)
 
 
-class ContractorView(RetrieveAPIView):
-    serializer_class = ContractorSerializer
-    
-    def get_queryset(self):
-        return User.objects.filter(id=self.kwargs["pk"])
-    
+class ContractorView(APIView):
+    def get(self, request):
+        token = request.COOKIES.get("jwt")
+        if not token:
+            raise AuthenticationFailed("Unauthenticated!")
+        try:
+            payload = jwt.decode(token, "lance", algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed("Token Expired!")
+        contractor = User.objects.get(id=payload["id"])
+        serializer = UserSerializer(contractor)
+        return Response(serializer.data)

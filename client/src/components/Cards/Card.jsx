@@ -10,8 +10,25 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
+import axios from "axios";
+import { useState,useEffect } from "react";
 
-export default function Card({name, position, pastProjects, onGoingProjects,image }) {
+export default function Card({position, pastProjects, onGoingProjects,image }) {
+  const [name, setName] = useState([""]);
+  useEffect(() => {
+    const getName = async () => {
+      axios
+        .get("http://127.0.0.1:8000/api/contractor")
+        .then((response) => {
+          console.log(response.data);
+          setName(() => {
+            return response.data.name;
+          });
+        })
+        .catch((err) => console.log(err));
+    };
+    getName();
+  }, []);
   return (
     <Center py={6}>
       <Box

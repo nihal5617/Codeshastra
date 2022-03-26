@@ -15,5 +15,5 @@ urlpatterns = [
     path("user", UserView.as_view()),
     path("logout", LogOutView.as_view()),
     path("day", DayView.as_view()),
-    re_path(r"^contractor/(?P<pk>\d+)", ContractorView.as_view()),
+    path("contractor", ContractorView.as_view()),
 ]
