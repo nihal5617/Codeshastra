@@ -2,8 +2,8 @@ import React from 'react'
 
 function Landing() {
   return (
-    <div>
-      Landing Page
+    <div className='container'>
+      landing help
     </div>
   )
 }

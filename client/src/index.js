@@ -11,13 +11,14 @@ import thunk from 'redux-thunk';
 import { reducers } from './reducer';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map from './components/newproject/Map';
+import Landing from './components/Landing/Landing';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
     <ChakraProvider>
-      <App />
+      <Landing />
     </ChakraProvider>
   </Provider>,
   document.getElementById('root')
