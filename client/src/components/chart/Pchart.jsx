@@ -18,8 +18,8 @@ export default function Pchart({ title, data, datakey, grid }) {
           <ResponsiveContainer width="100%">
             <PieChart
               data={[
-                { title: "One", value: 75, color: "#228b22" },
-                { title: "Two", value: 25, color: "#ffbf00" },
+                { title: "Completed", value: 75, color: "#228b22" },
+                { title: "Remaining", value: 25, color: "#ffbf00" },
                 // { title: "Three", value: 20, color: "#6A2135" },
               ]}
               // onMouseOver = {}

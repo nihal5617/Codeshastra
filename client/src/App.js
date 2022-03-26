@@ -8,6 +8,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Simple from "./components/Navbar/Navbar";
 import ProjectDetails from "./components/Projectdetails/ProjectDetails";
 import UserList from "./pages/userList/UserList";
+import User from "./pages/user/User"
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/project" element={<ProjectDetails/>}/>
           <Route path="/userList" element={<UserList/>}/>
+          <Route path="/user" element={<User/>}/>
           {/*<Route path="/*" element={<Error />} /> */}
         </Routes>
       </div>

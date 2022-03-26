@@ -8,8 +8,58 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import "./user.css";
+import { useState, React } from 'react'
 
-export default function User() {
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  address: "",
+  phone: "",
+};
+
+export default function User(props) {
+  const [form, setForm] = useState(initialState);
+  const [file, setfile] = useState(null);
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setForm({ ...form, myfile: file })
+    console.log(form)
+    // useEffect(() => {
+    //   const sendWorkerData = async () => {
+    //     axios
+    //       .post("http://127.0.0.1:8000/api/day",form)
+    //       .then((response) => {
+    //         console.log(response.data);
+    //         setUser((items) => {
+    //           return response.data;
+    //         });
+    //       })
+    //       .catch((err) => console.log(err));
+    //   };
+    //   sendWorkerData();
+    // }, []);
+  }
+  const handleChange = (e) => {
+    switch (e.target.name) {
+      case 'myFile':
+        const data = new FormData();
+        data.append('file', e.target.value);
+        console.log(data);
+      default:
+        setForm({ ...form, [e.target.name]: e.target.value });
+
+    }
+  }
+  const handleFile = (e) => {
+
+    // setForm({ ...form, [e.target.name]: e.target.files[0] });
+    // console.log(form)
+    // e.preventDefault();
+  }
+
   return (
     <div className="user">
       <div className="userTitleContainer">
@@ -22,58 +72,49 @@ export default function User() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={props.image}
               alt=""
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">Anna Becker</span>
-              <span className="userShowUserTitle">Software Engineer</span>
+              <span className="userShowUsername">{props.name}</span>
+              <span className="userShowUserTitle">Contractor</span>
             </div>
           </div>
           <div className="userShowBottom">
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99</span>
+              <span className="userShowInfoTitle">{props.email}</span>
             </div>
-            <div className="userShowInfo">
-              <CalendarToday className="userShowIcon" />
-              <span className="userShowInfoTitle">10.12.1999</span>
-            </div>
+
             <span className="userShowTitle">Contact Details</span>
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
-              <span className="userShowInfoTitle">+1 123 456 67</span>
+              <span className="userShowInfoTitle">{props.phone}</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99@gmail.com</span>
+              <span className="userShowInfoTitle">{props.email}</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">New York | USA</span>
+              <span className="userShowInfoTitle">{props.address}</span>
             </div>
           </div>
         </div>
         <div className="userUpdate">
-          <span className="userUpdateTitle">Edit</span>
-          <form className="userUpdateForm">
+          <span className="userUpdateTitle">Add Worker</span>
+          <form className="userUpdateForm" onSubmit={handleSubmit}>
             <div className="userUpdateLeft">
-              <div className="userUpdateItem">
-                <label>Username</label>
-                <input
-                  type="text"
-                  placeholder="annabeck99"
-                  className="userUpdateInput"
-                />
-              </div>
               <div className="userUpdateItem">
                 <label>Full Name</label>
                 <input
                   type="text"
                   placeholder="Anna Becker"
                   className="userUpdateInput"
+                  name="name"
+                  onChange={handleChange}
                 />
               </div>
               <div className="userUpdateItem">
@@ -82,7 +123,19 @@ export default function User() {
                   type="text"
                   placeholder="annabeck99@gmail.com"
                   className="userUpdateInput"
+                  name="email"
+                  onChange={handleChange}
                 />
+                <div className="userUpdateItem">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    placeholder="******"
+                    className="userUpdateInput"
+                    name="password"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
               <div className="userUpdateItem">
                 <label>Phone</label>
@@ -90,14 +143,18 @@ export default function User() {
                   type="text"
                   placeholder="+1 123 456 67"
                   className="userUpdateInput"
+                  name="phone"
+                  onChange={handleChange}
                 />
               </div>
               <div className="userUpdateItem">
                 <label>Address</label>
                 <input
                   type="text"
-                  placeholder="New York | USA"
+                  placeholder="Akola | Maharashtra"
                   className="userUpdateInput"
+                  name="address"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -105,15 +162,15 @@ export default function User() {
               <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src={file}
                   alt=""
                 />
                 <label htmlFor="file">
                   <Publish className="userUpdateIcon" />
                 </label>
-                <input type="file" id="file" style={{ display: "none" }} />
+                <input type="file" id="file" name="file" style={{ display: "none" }} onClick={handleChange} />
               </div>
-              <button className="userUpdateButton">Update</button>
+              <button className="userUpdateButton" type="submit">Update</button>
             </div>
           </form>
         </div>
