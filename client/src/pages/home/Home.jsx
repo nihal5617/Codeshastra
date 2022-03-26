@@ -37,12 +37,14 @@ export default function Home() {
           position="Contractor"
           pastProjects="17"
           onGoingProjects="2"
+          image = "https://picsum.photos/92/92?random=1"
         />
         <Card
           name="Lance Correia"
           position="Project Owner"
           pastProjects="28"
           onGoingProjects="4"
+          image = "https://picsum.photos/92/92?rand"
         />
         <ProjectDetails startDate="1-02-2022" endDate="1-5-2022" employees="20"  />
         </HStack>

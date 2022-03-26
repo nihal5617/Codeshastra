@@ -10,8 +10,25 @@ import {
   Button,
   useColorModeValue,
 } from "@chakra-ui/react";
+import axios from "axios";
+import { useState,useEffect } from "react";
 
-export default function Card({name, position, pastProjects, onGoingProjects }) {
+export default function Card({position, pastProjects, onGoingProjects,image }) {
+  const [name, setName] = useState([""]);
+  useEffect(() => {
+    const getName = async () => {
+      axios
+        .get("http://127.0.0.1:8000/api/contractor")
+        .then((response) => {
+          console.log(response.data);
+          setName(() => {
+            return response.data.name;
+          });
+        })
+        .catch((err) => console.log(err));
+    };
+    getName();
+  }, []);
   return (
     <Center py={6}>
       <Box
@@ -40,7 +57,7 @@ export default function Card({name, position, pastProjects, onGoingProjects }) {
             <Avatar
               size={"xl"}
               src={
-                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+                image
               }
               alt={"Author"}
               css={{
