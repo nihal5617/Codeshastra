@@ -86,7 +86,6 @@ class ContractorView(APIView):
     def get(self, request):
         print(request.COOKIES)
         token = request.COOKIES.get("jwt")
-        print(token)
         if not token:
             raise AuthenticationFailed("Unauthenticated!")
         try:

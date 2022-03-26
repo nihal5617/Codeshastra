@@ -21,6 +21,7 @@ const initialState = {
 export default function User(props) {
   const [form, setForm] = useState(initialState);
   const [file, setfile] = useState(null);
+  const [image, setImage] = useState('');
 
 
   const handleSubmit = (e) => {
@@ -168,7 +169,9 @@ export default function User(props) {
                 <label htmlFor="file">
                   <Publish className="userUpdateIcon" />
                 </label>
-                <input type="file" id="file" name="file" style={{ display: "none" }} onClick={handleChange} />
+                <input type="file" id="file" name="file" style={{ display: "none" }} onChange={(e)=>{
+                  setImage(URL.createObjectURL(e.target.files[0]));
+                }} />
               </div>
               <button className="userUpdateButton" type="submit">Update</button>
             </div>

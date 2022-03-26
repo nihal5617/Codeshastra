@@ -27,11 +27,9 @@ function App() {
           <div className="container">
             <Sidebar />
             <Routes>
-              {/* <Route path="/" element={<Home />} /> */}
               <Route path="/" element={<Home />} />
               <Route path="/userList" element={<UserList />} />
               <Route path="/user" element={<User />} />
-              {/*<Route path="/*" element={<Error />} /> */}
             </Routes>
           </div>
         </BrowserRouter>

@@ -17,6 +17,9 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { React, useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import Landing from '../Landing/Landing';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -36,6 +39,19 @@ const NavLink = ({ children }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const location = useLocation();
+
+  const logout = () => {
+    setUser(null);
+    delete localStorage["profile"]
+    console.log(user);
+    window.location.reload(false);
+  }
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [location])
 
   return (
     <>
@@ -60,6 +76,7 @@ export default function Simple() {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
+            <Button onClick={logout}>Logout</Button>
             <Menu>
               <MenuButton
                 as={Button}
@@ -78,7 +95,7 @@ export default function Simple() {
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>Logout</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
