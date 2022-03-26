@@ -16,12 +16,20 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
+import {
+  CalendarToday,
+  LocationSearching,
+  MailOutline,
+  PermIdentity,
+  PhoneAndroid,
+  Publish,
+} from "@material-ui/icons";
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { React, useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Landing from '../Landing/Landing';
 
-const Links = ['Dashboard', 'Add Worker', 'Upload Attendance','Attendance'];
+const Links = ['Dashboard', 'Add Worker', 'Upload Attendance', 'Attendance'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -37,7 +45,7 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
-export default function Simple() {
+export default function Simple(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const location = useLocation();
@@ -46,6 +54,8 @@ export default function Simple() {
     setUser(null);
     delete localStorage["profile"]
     console.log(user);
+    var path = window.location.href.replace('/*', '/');
+    window.location = path;
     window.location.reload(false);
   }
 
@@ -80,7 +90,7 @@ export default function Simple() {
             <Menu>
               <MenuButton
                 padding={10}
-                as={Button}
+                // as={Button}
                 rounded={'full'}
                 variant={'link'}
                 cursor={'pointer'}
@@ -92,6 +102,30 @@ export default function Simple() {
                   }
                 />
               </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <div className="userShowTopTitle">
+                    <span className="userShowUsername">Nihal</span>
+                    <span className="userShowUserTitle">Contractor</span>
+                  </div>
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem>
+                  <div className="userShowTopTitle">
+                    <span className="userShowUsername">Account details</span>
+
+                    <span className="userShowUserTitle"><PermIdentity className="userShowIcon" style={{ paddingTop: "3px" }} />nihal@gmail.com</span>
+                  </div>
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem>
+                  <div className="userShowTopTitle">
+                    <span className="userShowUsername">Contact details</span>
+
+                    <span className="userShowUserTitle">+99136263741</span>
+                  </div>
+                </MenuItem>
+              </MenuList>
             </Menu>
           </Flex>
         </Flex>
