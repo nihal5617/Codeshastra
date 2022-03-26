@@ -62,7 +62,7 @@ export default function Sidebar() {
               <AttachMoney className="sidebarIcon" />
               Transactions
             </li> */}
-            <Link to="WorkersData" className="link">
+            <Link to="/data" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
               Workers Data
