@@ -43,15 +43,16 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Workers Data</h3>
+          <h3 className="sidebarTitle">Workers</h3>
           <ul className="sidebarList">
-            {/* <Link to="/users" className="link">
+            <Link to="addWorker" className="link">
+
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                
+                Add Worker
               </li>
             </Link>
-            <Link to="/products" className="link">
+            {/* <Link to="/products" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
                 Products
@@ -61,26 +62,33 @@ export default function Sidebar() {
               <AttachMoney className="sidebarIcon" />
               Transactions
             </li> */}
-            <Link to="/userList" className="link">
+            <Link to="WorkersData" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
-              Reports
+              Workers Data
             </li>
             </Link>
           </ul>
         </div>
+        
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Attendance</h3>
           <ul className="sidebarList">
+            
+          <Link to="/attendance" className="link">
             <li className="sidebarListItem">
               <LineStyle className="sidebarIcon" />
               Attendance
             </li>
-            {/* <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Feedback
-            </li>
+            
+            </Link>
+            <Link to="/ocr" className="link">
             <li className="sidebarListItem">
+              <DynamicFeed className="sidebarIcon" />
+              Upload Attendance
+            </li>
+            </Link>
+            {/* <li className="sidebarListItem">
               <ChatBubbleOutline className="sidebarIcon" />
               Messages
             </li> */}

@@ -10,6 +10,8 @@ import ProjectDetails from "./components/Projectdetails/ProjectDetails";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import { useState, React, useEffect } from "react";
+import OcrAttendance from "./components/OcrAttendance/OcrAttendance";
+import WorkersData from "./components/WorkersData/WorkersData";
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
@@ -28,8 +30,10 @@ function App() {
             <Sidebar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/userList" element={<UserList />} />
-              <Route path="/user" element={<User />} />
+              <Route path="/addWorker" element={<User/>} />
+              <Route path="/attendance" element={<UserList />} />
+              <Route path="/ocr" element={<OcrAttendance />} />
+              <Route path="/WorkersData" element={<WorkersData/>}/>
             </Routes>
           </div>
         </BrowserRouter>
