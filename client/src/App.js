@@ -8,39 +8,41 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Simple from "./components/Navbar/Navbar";
 import ProjectDetails from "./components/Projectdetails/ProjectDetails";
 import UserList from "./pages/userList/UserList";
-import User from "./pages/user/User"
-import { useState, React,useEffect } from 'react'
+import User from "./pages/user/User";
+import { useState, React, useEffect } from "react";
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
 function App() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   // const location=useLocation();
   useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('profile')));
-  })
-  return (<>
-    {user ? (
-      <BrowserRouter>
-        <Simple />
-        <div className="container">
-          <Sidebar />
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, []);
+  return (
+    <>
+      {user ? (
+        <BrowserRouter>
+          <Simple />
+          <div className="container">
+            <Sidebar />
+            <Routes>
+              {/* <Route path="/" element={<Home />} /> */}
+              <Route path="/" element={<Home />} />
+              <Route path="/userList" element={<UserList />} />
+              <Route path="/user" element={<User />} />
+              {/*<Route path="/*" element={<Error />} /> */}
+            </Routes>
+          </div>
+        </BrowserRouter>
+      ) : (
+        <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route path="/" element={<Home />} />
-            <Route path="/userList" element={<UserList />} />
-            <Route path="/user" element={<User />} />
-            {/*<Route path="/*" element={<Error />} /> */}
+            <Route path="/" element={<Auth />} />
           </Routes>
-        </div>
-      </BrowserRouter>) : (<BrowserRouter>
-
-        <Routes>
-          <Route path="/" element={<Auth />} />
-        </Routes>
-
-      </BrowserRouter>)}
-  </>
+        </BrowserRouter>
+      )}
+    </>
   );
 }
 
