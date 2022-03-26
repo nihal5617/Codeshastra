@@ -17,8 +17,11 @@ export default function Card({position, pastProjects, onGoingProjects,image }) {
   const [name, setName] = useState([""]);
   useEffect(() => {
     const getName = async () => {
+      // document.cookie = JSON.parse(localStorage.getItem('profile')).jwt;
       axios
-        .get("http://127.0.0.1:8000/api/contractor")
+        .post("http://127.0.0.1:8000/api/contractor", {
+          jwt: JSON.parse(localStorage.getItem("profile")).jwt,
+        })
         .then((response) => {
           console.log(response.data);
           setName(() => {

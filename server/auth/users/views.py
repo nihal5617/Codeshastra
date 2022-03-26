@@ -83,9 +83,8 @@ class DayView(ListCreateAPIView):
 
 
 class ContractorView(APIView):
-    def get(self, request):
-        print(request.COOKIES)
-        token = request.COOKIES.get("jwt")
+    def post(self, request):
+        token = request.data["jwt"]
         if not token:
             raise AuthenticationFailed("Unauthenticated!")
         try:
