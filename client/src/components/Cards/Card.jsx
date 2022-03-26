@@ -13,13 +13,13 @@ import {
 import axios from "axios";
 import { useState,useEffect } from "react";
 
-export default function Card({position, pastProjects, onGoingProjects,image }) {
+export default function Card({position, pastProjects, onGoingProjects,image,url }) {
   const [name, setName] = useState([""]);
   useEffect(() => {
     const getName = async () => {
       // document.cookie = JSON.parse(localStorage.getItem('profile')).jwt;
       axios
-        .post("http://127.0.0.1:8000/api/contractor", {
+        .post(`http://127.0.0.1:8000/api/${url}`, {
           jwt: JSON.parse(localStorage.getItem("profile")).jwt,
         })
         .then((response) => {
@@ -43,16 +43,6 @@ export default function Card({position, pastProjects, onGoingProjects,image }) {
         overflow={"hidden"}
       >
         <Flex justify={"center"} mt={12}>
-          {/* <Avatar
-              size={'xl'}
-              src={
-                'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
-              }
-              alt={'Author'}
-              css={{
-                border: '2px solid white',
-              }}
-            /> */}
         </Flex>
 
         <Box p={6}>

@@ -33,11 +33,12 @@ export default function Home() {
       <Flex>
       <HStack spacing="24px">
         <Card
-          name="Sahil Shetty"
+        name = ""
           position="Contractor"
           pastProjects="17"
           onGoingProjects="2"
           image = "https://picsum.photos/92/92?random=1"
+          url = "contractor"
         />
         <Card
           name="Lance Correia"
@@ -45,6 +46,7 @@ export default function Home() {
           pastProjects="28"
           onGoingProjects="4"
           image = "https://picsum.photos/92/92?rand"
+          url = "projectowner"
         />
         <ProjectDetails startDate="1-02-2022" endDate="1-5-2022" employees="20"  />
         </HStack>

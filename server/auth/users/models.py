@@ -47,3 +47,6 @@ class Day(models.Model):
     date = models.DateField()
     Project = models.ForeignKey(Project, on_delete=models.CASCADE)
     worker = models.IntegerField(default=0)
+
+# class ProjectOwner(User):
+    

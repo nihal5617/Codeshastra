@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Contractor, Project, Worker,Day
+from .models import User, Contractor, Project, Worker, Day
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -22,7 +22,20 @@ class ContractorSerializer(UserSerializer):
         model = Contractor
         fields = UserSerializer.Meta.fields + ["Present", "Violations", "Absent"]
 
+
 class DaySerializer(serializers.ModelSerializer):
     class Meta:
         model = Day
         fields = ["date", "worker"]
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = "__all__"
+
+
+class WorkerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Worker
+        fields = ["id", "name", "lastname", "img", "contractor"]

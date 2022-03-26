@@ -1,9 +1,14 @@
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveAPIView
-from .serializers import UserSerializer, ContractorSerializer, DaySerializer
+from .serializers import (
+    UserSerializer,
+    ContractorSerializer,
+    DaySerializer,
+    ProjectSerializer,
+)
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
-from .models import User, Day
+from .models import User, Day, Project
 import datetime, jwt
 
 # Create your views here.
@@ -93,4 +98,19 @@ class ContractorView(APIView):
             raise AuthenticationFailed("Token Expired!")
         contractor = User.objects.get(id=payload["id"])
         serializer = UserSerializer(contractor)
+        return Response(serializer.data)
+
+
+class ProjectView(APIView):
+    def post(self, request):
+        token = request.data["jwt"]
+        if not token:
+            raise AuthenticationFailed("Unauthenticated!")
+        try:
+            payload = jwt.decode(token, "lance", algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed("Token Expired!")
+        project = Project.objects.get(Contractor_id=payload["id"])
+        print(project)
+        serializer = ProjectSerializer(project)
         return Response(serializer.data)

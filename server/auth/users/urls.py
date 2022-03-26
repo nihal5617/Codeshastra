@@ -5,6 +5,7 @@ from .views import (
     LogOutView,
     ContractorRegisterView,
     ContractorLoginView,
+    ProjectView,
     UserView,
     DayView,
 )
@@ -16,4 +17,5 @@ urlpatterns = [
     path("logout", LogOutView.as_view()),
     path("day", DayView.as_view()),
     path("contractor", ContractorView.as_view()),
+    path("projects", ProjectView.as_view()),
 ]
