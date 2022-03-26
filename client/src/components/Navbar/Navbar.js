@@ -54,9 +54,7 @@ export default function Simple(props) {
     setUser(null);
     delete localStorage["profile"]
     console.log(user);
-    var path = window.location.href.replace('/*', '/');
-    window.location = path;
-    window.location.reload(false);
+    window.location.href="/"
   }
 
   useEffect(() => {
