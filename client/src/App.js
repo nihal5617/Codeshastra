@@ -5,12 +5,13 @@ import Main from "./pages/Main";
 import Home from "./pages/home/Home";
 import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
+import Simple from "./components/Navbar/Navbar";
 
 function App() {
   return (
    
     <BrowserRouter>
-       {/* <Navbar /> */}
+       <Simple/>
        <div className="container">
         <Sidebar />
         <Routes>
