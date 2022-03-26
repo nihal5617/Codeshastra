@@ -11,6 +11,28 @@ class User(AbstractUser):
     lastname = models.CharField(max_length=255, null=True)
     img = models.ImageField(null=True)
     username = None
-
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
+
+class Contractor(User):
+    Present = models.IntegerField(default=0)
+    Violations = models.IntegerField(default=0)
+    Absent = models.IntegerField(default=0)
+
+
+class Project(models.Model):
+    Name = models.CharField(max_length=255)
+    Description = models.CharField(max_length=255)
+    Start_date = models.DateTimeField()
+    End_date = models.DateTimeField()
+    workers = models.IntegerField()
+    Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
+
+
+class Worker(User):
+    Present = models.IntegerField(default=0)
+    Violations = models.IntegerField(default=0)
+    Absent = models.IntegerField(default=0)
+    Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
+    Project = models.OneToOneField(Project, on_delete=models.CASCADE)
