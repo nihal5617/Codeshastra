@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       {user ? (
-        user.position ? (
+        user.title === "Worker" ? (
           <BrowserRouter>
             <Simple />
             <div className="container">
@@ -40,7 +40,7 @@ function App() {
                 <Route path="/past" element={<PastProjects />} />
               </Routes>
             </div>
-            </BrowserRouter>
+          </BrowserRouter>
         ) : (
           <BrowserRouter>
             <Simple />
@@ -55,7 +55,6 @@ function App() {
                 <Route path="/past" element={<PastProjects />} />
               </Routes>
             </div>
-            
           </BrowserRouter>
         )
       ) : (

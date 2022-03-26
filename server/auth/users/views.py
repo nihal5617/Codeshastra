@@ -5,6 +5,7 @@ from .serializers import (
     ContractorSerializer,
     DaySerializer,
     ProjectSerializer,
+    WorkerSerializer,
 )
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
@@ -14,6 +15,20 @@ import datetime, jwt
 # Create your views here.
 class ContractorRegisterView(CreateAPIView):
     serializer_class = ContractorSerializer
+
+
+class WorkerRegisterView(APIView):
+    def post(self, request):
+        try:
+            data = request.data
+            user = UserSerializer(data=data)
+            if user.is_valid():
+                user.save()
+                return Response({"message": "Successfully registered"})
+            else:
+                return Response({"message": "Failed to register"})
+        except:
+            return Response({"message": "Failed to register"})
 
 
 class ContractorLoginView(APIView):

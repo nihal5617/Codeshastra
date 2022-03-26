@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import "./user.css";
 import { useState, React } from 'react'
 import FileBase from 'react-file-base64';
-
+import axios from "axios";
 
 const initialState = {
   name: "",
@@ -26,22 +26,15 @@ export default function User() {
   console.log(data);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form)
-    // useEffect(() => {
-    //   const sendWorkerData = async () => {
-    //     axios
-    //       .post("http://127.0.0.1:8000/api/day",form)
-    //       .then((response) => {
-    //         console.log(response.data);
-    //         setUser((items) => {
-    //           return response.data;
-    //         });
-    //       })
-    //       .catch((err) => console.log(err));
-    //   };
-    //   sendWorkerData();
-    // }, []);
-  }
+    setForm({...form,contractor_id:"1"});
+    console.log(form);
+        axios
+          .post("http://127.0.0.1:8000/api/worker",form)
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((err) => console.log(err));
+      };
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   }

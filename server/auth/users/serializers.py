@@ -1,3 +1,4 @@
+from matplotlib.pyplot import title
 from rest_framework import serializers
 from .models import User, Contractor, Project, Worker, Day
 
@@ -48,4 +49,4 @@ class ProjectSerializer(serializers.ModelSerializer):
 class WorkerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Worker
-        fields = ["id", "name", "lastname", "img", "contractor"]
+        fields = UserSerializer.Meta.fields + ["Present", "Violations", "Absent"]
