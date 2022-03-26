@@ -30,7 +30,7 @@ const OcrAttendance = () => {
   };
 
   return (
-    <div className="container" style={{ height: '100vh' }}>
+    <div className="container" style={{ height: '100vh',width:"80%" }}>
       <div className="row h-100">
         <div className="col-md-5 mx-auto h-100 d-flex flex-column justify-content-center">
           {!isLoading && (

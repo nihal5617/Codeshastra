@@ -21,7 +21,7 @@ import { React, useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Landing from '../Landing/Landing';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = ['Dashboard', 'Add Worker', 'Upload Attendance','Attendance'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -92,12 +92,6 @@ export default function Simple() {
                   }
                 />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Logout</MenuItem>
-              </MenuList>
             </Menu>
           </Flex>
         </Flex>

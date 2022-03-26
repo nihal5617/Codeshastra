@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { signin, signuphere } from '../../action/auth';
 import { GoogleLogin } from "react-google-login";
 import '../Auth/auth.css'
+import FileBase from 'react-file-base64';
 
 const initialState = {
     name: "",
@@ -57,10 +58,10 @@ const Auth = () => {
         console.log(form)
     }
 
-    const onFileChange = (e) => { 
-        setForm({ ...form,[e.target.name]: e.target.files[0] }); 
+    const onFileChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.files[0] });
         console.log(form)
-      }; 
+    };
 
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
@@ -144,7 +145,7 @@ const Auth = () => {
                                 {isSignup && (
                                     <FormControl id="image" isRequired>
                                         <FormLabel>Image</FormLabel>
-                                        <input type="file" name='file' onChange={onFileChange} />
+                                        <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} />
                                     </FormControl>
                                 )}
                                 {isSignup ? (

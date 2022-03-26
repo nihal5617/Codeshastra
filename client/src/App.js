@@ -33,7 +33,7 @@ function App() {
               <Route path="/addWorker" element={<User/>} />
               <Route path="/attendance" element={<UserList />} />
               <Route path="/ocr" element={<OcrAttendance />} />
-              <Route path="/WorkersData" element={<WorkersData/>}/>
+              <Route path="/data" element={<WorkersData/>}/>
             </Routes>
           </div>
         </BrowserRouter>
