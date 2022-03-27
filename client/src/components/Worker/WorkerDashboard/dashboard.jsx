@@ -26,7 +26,7 @@ export default function Dashboard() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Details</h3>
           <ul className="sidebarList">
-            <Link to="/details" className="link">
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Details
