@@ -36,6 +36,7 @@ export default function UserList() {
   }
   const handleSubmit=()=>{
     console.log(attendanceofworker);
+
   }
 
   const columns = [
@@ -70,12 +71,14 @@ export default function UserList() {
       <div className="userList">
         <DataGrid rows={data} columns={columns} pageSize={8}
         hideFooterPagination
-          checkboxSelection onSelectionChange={(newSelection) => {
-            setAttendanceofworker(newSelection.rows);
-          }} />
-          {attendanceofworker.map(val =><h1>{val.id}</h1>)}
+          checkboxSelection onSelectionModelChange={(newSelection) => {
+            console.log(attendanceofworker)
+            setAttendanceofworker(newSelection)
+          }} 
+          attendanceofworker={attendanceofworker}/>
+          {/* {attendanceofworker.map(val =><h1>{val.id}</h1>)} */}
         <div style={{ display: "flex", justifyContent: "flex-end", padding: "20px" }}>
-          <Button onSubmit={handleSubmit}>Submit</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </div>
       </div>
 
