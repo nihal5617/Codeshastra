@@ -10,29 +10,31 @@ import {
     Button,
     useColorModeValue,
   } from "@chakra-ui/react";
-  import axios from "axios";
-  import { useState,useEffect } from "react";
+//   import axios from "axios";
+//   import { useState,useEffect } from "react";
+  import "./Card.css";
   
-  export default function CardWorker({name,position, pastProjects, violations,image }) {
-    const [name, setName] = useState([""]);
-    useEffect(() => {
-      const getName = async () => {
-        axios
-          .post("http://127.0.0.1:8000/api/contractor", {
-            jwt: JSON.parse(localStorage.getItem("profile")).jwt,
-          })
-          .then((response) => {
-            console.log(response.data);
-            setName(() => {
-              return response.data.name;
-            });
-          })
-          .catch((err) => console.log(err));
-      };
-      getName();
-    }, []);
+  export default function CardOwner({name, position, pastProjects, onGoingProjects,image,url }) {
+    // const [name, setName] = useState([""]);
+    // useEffect(() => {
+    //   const getName = async () => {
+    //     // document.cookie = JSON.parse(localStorage.getItem('profile')).jwt;
+    //     axios
+    //       .post(`http://127.0.0.1:8000/api/${url}`, {
+    //         jwt: JSON.parse(localStorage.getItem("profile")).jwt,
+    //       })
+    //       .then((response) => {
+    //         console.log(response.data);
+    //         setName(() => {
+    //           return response.data.name;
+    //         });
+    //       })
+    //       .catch((err) => console.log(err));
+    //   };
+    //   getName();
+    // }, []);
     return (
-      <Center py={6} padding="10px">
+      <Center py={6}>
         <Box
           maxW={"270px"}
           w={"full"}
@@ -42,20 +44,10 @@ import {
           overflow={"hidden"}
         >
           <Flex justify={"center"} mt={12}>
-            {/* <Avatar
-                size={'xl'}
-                src={
-                  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
-                }
-                alt={'Author'}
-                css={{
-                  border: '2px solid white',
-                }}
-              /> */}
           </Flex>
   
           <Box p={6}>
-            <Flex justify={"center"} mt={-12} padding="10px">
+            <Flex justify={"center"} mt={-12}>
               <Avatar
                 size={"xl"}
                 src={
@@ -82,9 +74,9 @@ import {
                 </Text>
               </Stack>
               <Stack spacing={0} align={"center"}>
-                <Text fontWeight={600}>{violations}</Text>
+                <Text fontWeight={600}>{onGoingProjects}</Text>
                 <Text fontSize={"sm"} color={"gray.500"}>
-                  Violations
+                  Ongoing Projects
                 </Text>
               </Stack>
             </Stack>

@@ -10,6 +10,7 @@ import axios from "axios";
 import Card from "../../components/Cards/Card";
 import { Flex,HStack } from "@chakra-ui/react";
 import ProjectDetails from "../../components/Projectdetails/ProjectDetails";
+import CardOwner from "../../components/Cards/CardOwner";
 
 export default function Home() {
   const [userData, setUser] = useState([]);
@@ -40,7 +41,7 @@ export default function Home() {
           image = "https://picsum.photos/92/92?random=1"
           url = "contractor"
         />
-        <Card
+        <CardOwner
           name="Lance Correia"
           position="Project Owner"
           pastProjects="28"

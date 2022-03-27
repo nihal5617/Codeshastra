@@ -5,7 +5,7 @@ import "./WorkerProject.css";
 
 function WorkerProject() {
   return (
-    <div className='container'>
+    <div className='container-projDetails'>
         <ProjectDetails/>
     </div>
   )

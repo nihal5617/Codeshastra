@@ -1,3 +1,7 @@
-.card{
-    flex:4;
+.card {
+  flex: 4;
+}
+
+.right {
+  padding-right: 30px;
 }
