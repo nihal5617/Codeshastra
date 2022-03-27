@@ -13,9 +13,9 @@ import {
 import brandLogo from '../../assets/brand-logo.svg';
 import illustration from '../../assets/illustration.svg';
 import imageOne from '../../assets/imageOne.png';
-import imageTwo from '../../assets/image-two.png';
-import imageThree from '../../assets/image-three.png';
-import imageFour from '../../assets/image-four.png';
+import imageTwo from '../../assets/image2.jpg';
+import imageThree from '../../assets/image3.jpg';
+import imageFour from '../../assets/image4.jpg';
 import rightArrow from '../../assets/right-arrow.svg';
 import Footer from '../Footer';
 import { Link } from 'react-router-dom';
@@ -98,26 +98,28 @@ function Landing() {
                         <Box>
                             <Image
                                 w="100%"
+                                height="210px"
                                 borderRadius="lg"
                                 src={imageTwo}
                                 alt="image three"
                                 maxHeight="300px"
                             />
                             <Button colorScheme="teal" variant="link" mt="5">
-                                Make new friend
+                                Make new Contracts
                                 <Image w="100%" ml="2" src={rightArrow} alt="right arrow" />
                             </Button>
                         </Box>
                         <Box>
                             <Image
                                 w="100%"
+                                height="210px"
                                 borderRadius="lg"
                                 src={imageThree}
                                 alt="image three"
                                 maxHeight="300px"
                             />
                             <Button colorScheme="teal" variant="link" mt="5">
-                                Explore the outdoors
+                                Explore new Projects
                                 <Image w="100%" ml="2" src={rightArrow} alt="right arrow" />
                             </Button>
                         </Box>
@@ -130,7 +132,7 @@ function Landing() {
                                 maxHeight="300px"
                             />
                             <Button colorScheme="teal" variant="link" mt="5">
-                                Connect over tech
+                                Workers work hard
                                 <Image w="100%" ml="2" src={rightArrow} alt="right arrow" />
                             </Button>
                         </Box>
@@ -161,7 +163,7 @@ function Landing() {
                             color="#ffffff"
                             bg="blue.100"
                         >
-                            Boost your carrer
+                            Boost your project
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -173,7 +175,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Find your zen
+                            Find your workers
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -185,7 +187,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Get moving
+                            Keep moving
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -197,7 +199,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Share launguage + culture
+                            Share Ideas
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -209,7 +211,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Read with friends
+                            Meet new contractors
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -221,7 +223,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Write together
+                            Work Together
                         </Badge>
                         <Badge
                             borderRadius="3xl"
@@ -233,7 +235,7 @@ function Landing() {
                             textTransform="normal"
                             bg="blue.100"
                         >
-                            Hone your craft
+                            Stay Happy
                         </Badge>
                     </Box>
                 </Container>
@@ -262,7 +264,7 @@ function Landing() {
                                     base: 'none',
                                 }}
                             >
-                                See what’s happening
+                                See what’s Our Stack
                             </Heading>
                             <Box display="flex" flexWrap="wrap" justifyContent="flex-start">
                                 <Badge
@@ -275,7 +277,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    Starting soon
+                                    React
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -287,7 +289,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    Today
+                                    Django
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -299,7 +301,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    Tomorrow
+                                    MySQL
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -311,7 +313,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    This Week
+                                    material-ui
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -323,7 +325,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    Online
+                                    chakra-ui
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -335,7 +337,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    In person
+                                    CSS
                                 </Badge>
                                 <Badge
                                     borderRadius="3xl"
@@ -347,7 +349,7 @@ function Landing() {
                                     textTransform="normal"
                                     bg="blue.100"
                                 >
-                                    Trending near you
+                                    Bootstrap
                                 </Badge>
                             </Box>
                         </Box>
