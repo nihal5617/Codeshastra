@@ -38,8 +38,8 @@ class Worker(User):
     Present = models.IntegerField(default=0)
     Violations = models.IntegerField(default=0)
     Absent = models.IntegerField(default=0)
-    Contractor = models.ForeignKey(Contractor, on_delete=models.CASCADE)
-    Project = models.OneToOneField(Project, on_delete=models.CASCADE)
+    Contractor = models.IntegerField(null=True)
+    Project = models.IntegerField(null=True)
     Aadhaar_no = models.CharField(max_length=20, null=True)
 
 
@@ -47,6 +47,4 @@ class Day(models.Model):
     date = models.DateField()
     Project = models.ForeignKey(Project, on_delete=models.CASCADE)
     worker = models.IntegerField(default=0)
-
-# class ProjectOwner(User):
     

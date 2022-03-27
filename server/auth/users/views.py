@@ -17,18 +17,8 @@ class ContractorRegisterView(CreateAPIView):
     serializer_class = ContractorSerializer
 
 
-class WorkerRegisterView(APIView):
-    def post(self, request):
-        try:
-            data = request.data
-            user = UserSerializer(data=data)
-            if user.is_valid():
-                user.save()
-                return Response({"message": "Successfully registered"})
-            else:
-                return Response({"message": "Failed to register"})
-        except:
-            return Response({"message": "Failed to register"})
+class WorkerRegisterView(CreateAPIView):
+    serializer_class = WorkerSerializer
 
 
 class ContractorLoginView(APIView):
