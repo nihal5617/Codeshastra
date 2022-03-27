@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       {user ? (
-        // user.position ? (
+        JSON.parse(localStorage.getItem("profile")).title === "Worker" ? (
           <BrowserRouter>
             <Simple />
             <div className="container">
@@ -39,24 +39,24 @@ function App() {
               </Routes>
             </div>
             </BrowserRouter>
-        // ) : (
-          // <BrowserRouter>
-          //   <Simple />
-          //   <div className="container">
-          //     <Sidebar />
-          //     <Routes>
-          //       <Route path="/" element={<Home />} />
-          //       <Route path="/addWorker" element={<User />} />
-          //       <Route path="/attendance" element={<UserList />} />
-          //       <Route path="/ocr" element={<OcrAttendance />} />
-          //       <Route path="/data" element={<WorkersData />} />
-          //       <Route path="/past" element={<PastProjects />} />
-          //     </Routes>
-          //   </div>
+        ) : (
+          <BrowserRouter>
+            <Simple />
+            <div className="container">
+              <Sidebar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/addWorker" element={<User />} />
+                <Route path="/attendance" element={<UserList />} />
+                <Route path="/ocr" element={<OcrAttendance />} />
+                <Route path="/data" element={<WorkersData />} />
+                <Route path="/past" element={<PastProjects />} />
+              </Routes>
+            </div>
             
-          // </BrowserRouter>
+          </BrowserRouter>
         
-      ) : (
+      )) : (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Auth />} />
