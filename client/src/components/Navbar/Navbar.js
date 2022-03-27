@@ -4,7 +4,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -29,23 +28,25 @@ import { React, useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Landing from "../Landing/Landing";
 import "./navbar.css";
+import { NavLink } from "react-router-dom";
 
 const Links = ["Dashboard", "Add Worker", "Upload Attendance", "Attendance"];
 
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
+// const NavLink = ({ children }) => (
+//   // <Link
+//   //   px={2}
+//   //   py={1}
+//   //   rounded={"md"}
+//   //   _hover={{
+//   //     textDecoration: "none",
+//   //     bg: useColorModeValue("gray.200", "gray.700"),
+//   //   }}
+//   //   href={"#"}
+//   // >
+//   //   {children}
+//   // </Link>
+//   <></>
+// );
 
 export default function Simple(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -75,8 +76,9 @@ export default function Simple(props) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
+            <NavLink to="/">
             <Box><span className="logo">Bob The Builder
-              </span></Box>
+              </span></Box></NavLink>
             {/* <HStack
               as={"nav"}
               spacing={4}
@@ -139,7 +141,7 @@ export default function Simple(props) {
           </Flex>
         </Flex>
 
-        {isOpen ? (
+        {/* {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
@@ -147,7 +149,7 @@ export default function Simple(props) {
               ))}
             </Stack>
           </Box>
-        ) : null}
+        ) : null} */}
       </Box>
     </>
   );

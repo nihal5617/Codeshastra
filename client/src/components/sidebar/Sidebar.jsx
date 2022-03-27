@@ -27,21 +27,22 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Projects</h3>
           <ul className="sidebarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Current Project
-            </li>
+              <li className="sidebarListItem">
+                <Timeline className="sidebarIcon" />
+                Current Project
+              </li>
             </Link>
             <Link to="/past" className="link">
-            <li className="sidebarListItem">
-              <Apartment className="sidebarIcon" />
-              Past Projects
-            </li>
+              <li className="sidebarListItem">
+                <Apartment className="sidebarIcon" />
+                Past Projects
+              </li>
             </Link>
-            {/* <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon" />
-              Sales
-            </li> */}
+            <Link to="/newproject">
+              <li className="sidebarListItem">
+                <TrendingUp className="sidebarIcon" />
+                New Project
+              </li></Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -65,30 +66,30 @@ export default function Sidebar() {
               Transactions
             </li> */}
             <Link to="/data" className="link">
-            <li className="sidebarListItem">
-              <BarChart className="sidebarIcon" />
-              Workers Data
-            </li>
+              <li className="sidebarListItem">
+                <BarChart className="sidebarIcon" />
+                Workers Data
+              </li>
             </Link>
           </ul>
         </div>
-        
+
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Attendance</h3>
           <ul className="sidebarList">
-            
-          <Link to="/attendance" className="link">
-            <li className="sidebarListItem">
-              <LineStyle className="sidebarIcon" />
-              Attendance
-            </li>
-            
+
+            <Link to="/attendance" className="link">
+              <li className="sidebarListItem">
+                <LineStyle className="sidebarIcon" />
+                Attendance
+              </li>
+
             </Link>
             <Link to="/ocr" className="link">
-            <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Upload Attendance
-            </li>
+              <li className="sidebarListItem">
+                <DynamicFeed className="sidebarIcon" />
+                Upload Attendance
+              </li>
             </Link>
             {/* <li className="sidebarListItem">
               <ChatBubbleOutline className="sidebarIcon" />
