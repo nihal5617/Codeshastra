@@ -77,8 +77,10 @@ export default function Simple(props) {
           />
           <HStack spacing={8} alignItems={"center"}>
             <NavLink to="/">
-            <Box><span className="logo">Bob The Builder
-              </span></Box></NavLink>
+              <Box>
+                <span className="logo">Construct-W</span>
+              </Box>
+            </NavLink>
             {/* <HStack
               as={"nav"}
               spacing={4}
@@ -90,7 +92,9 @@ export default function Simple(props) {
             </HStack> */}
           </HStack>
           <Flex alignItems={"center"}>
-            <Button onClick={logout} className="logout" >Log Out</Button>
+            <Button onClick={logout} className="logout">
+              Log Out
+            </Button>
             <Menu>
               <MenuButton
                 padding={10}
@@ -100,7 +104,8 @@ export default function Simple(props) {
                 cursor={"pointer"}
                 minW={0}
               >
-                <Avatar className="avatar"
+                <Avatar
+                  className="avatar"
                   size={"sm"}
                   src={
                     "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
