@@ -29,7 +29,7 @@ export default function Sidebar() {
             <Link to="/" className="link">
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
-              Current Projects
+              Current Project
             </li>
             </Link>
             <Link to="/past" className="link">
