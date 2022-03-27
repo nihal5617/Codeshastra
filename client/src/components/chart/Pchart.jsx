@@ -14,7 +14,6 @@ import { useState, useEffect } from "react";
 export default function Pchart({ title, data, datakey, grid }) {
   const [left, setProj_Data] = useState(0);
   const [completed, setCompleted] = useState(0);
-  var a,b;
   useEffect(() => {
     const getProj_Data = async () => {
       document.cookie = JSON.parse(localStorage.getItem('profile')).jwt;
@@ -26,13 +25,13 @@ export default function Pchart({ title, data, datakey, grid }) {
           console.log(response.data);
           response.data.Start_date = new Date(response.data.Start_date);
           response.data.End_date = new Date(response.data.End_date);
-          setProj_Data((new Date().getTime() -response.data.Start_date)/100000);
-          setCompleted((response.data.End_date- new Date())/100000);
+          setProj_Data((new Date() -response.data.Start_date)/(1000 * 60 * 60 * 24));
+          setCompleted((response.data.End_date- new Date())/(1000 * 60 * 60 * 24));
           console.log(left,completed);
           // console.log(response.data.End_date-response.data.Start_date);
-          a=(response.data.End_date- new Date())/100000;
-          b=(new Date().getTime() -response.data.Start_date)/100000;
-          console.log(a,b)
+          // a=(response.data.End_date- new Date())/100000;
+          // b=(new Date().getTime() -response.data.Start_date)/100000;
+          // console.log(a,b)
         })
         .catch((err) => console.log(err));
     };
@@ -46,8 +45,8 @@ export default function Pchart({ title, data, datakey, grid }) {
           <ResponsiveContainer width="100%">
             <PieChart
               data={[
-                { title: "Completed", value: {left}, color: "#228b22" },
-                { title: "Remaining", value: {completed}, color: "#ffbf00" },
+                { title: "Completed", value: 69, color: "#228b22" },
+                { title: "Remaining", value: 31, color: "#ffbf00" },
 
               ]}
               // onMouseOver = {}

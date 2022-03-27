@@ -56,7 +56,7 @@ import {
           </Flex>
   
           <Box p={6}>
-            <Flex justify={"center"} mt={-12}>
+            <Flex justify={"center"} mt={-12} padding="10px">
               <Avatar
                 size={"xl"}
                 src={

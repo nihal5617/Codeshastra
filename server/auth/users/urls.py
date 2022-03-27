@@ -9,6 +9,7 @@ from .views import (
     UserView,
     DayView,
     WorkerRegisterView,
+    WorkerView,
 )
 
 urlpatterns = [
@@ -20,4 +21,5 @@ urlpatterns = [
     path("contractor", ContractorView.as_view()),
     path("projects", ProjectView.as_view()),
     path("worker", WorkerRegisterView.as_view()),
+    path("workers", WorkerView.as_view()),
 ]
