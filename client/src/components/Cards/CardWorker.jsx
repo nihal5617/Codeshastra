@@ -14,23 +14,23 @@ import {
   import { useState,useEffect } from "react";
   
   export default function CardWorker({name,position, pastProjects, violations,image }) {
-    const [name, setName] = useState([""]);
-    useEffect(() => {
-      const getName = async () => {
-        axios
-          .post("http://127.0.0.1:8000/api/contractor", {
-            jwt: JSON.parse(localStorage.getItem("profile")).jwt,
-          })
-          .then((response) => {
-            console.log(response.data);
-            setName(() => {
-              return response.data.name;
-            });
-          })
-          .catch((err) => console.log(err));
-      };
-      getName();
-    }, []);
+    // const [name, setName] = useState([""]);
+    // useEffect(() => {
+    //   const getName = async () => {
+    //     axios
+    //       .post("http://127.0.0.1:8000/api/contractor", {
+    //         jwt: JSON.parse(localStorage.getItem("profile")).jwt,
+    //       })
+    //       .then((response) => {
+    //         console.log(response.data);
+    //         setName(() => {
+    //           return response.data.name;
+    //         });
+    //       })
+    //       .catch((err) => console.log(err));
+    //   };
+    //   getName();
+    // }, []);
     return (
       <Center py={6} padding="10px">
         <Box
