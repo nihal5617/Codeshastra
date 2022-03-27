@@ -64,7 +64,7 @@ export default function WorkersData() {
 
   return (
     <>
-     <div className="userList">
+     <div className="userList" style={{padding:"10px"}}>
          <Flex>
          <CardWorker
           name="Lance Correia"

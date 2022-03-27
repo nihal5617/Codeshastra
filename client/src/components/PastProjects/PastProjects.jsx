@@ -17,7 +17,7 @@ import {
 function PastProjects() {
   return (
       <>
-      <div className="card">
+      <div className="card" style={{padding:"10px"}}>
       <Flex>
       
       <CardProjects 

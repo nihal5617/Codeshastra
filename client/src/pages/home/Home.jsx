@@ -28,7 +28,7 @@ export default function Home() {
     getItems();
   }, []);
   return (
-    <div className="home">
+    <div className="home" style={{padding:"10px"}}>
       {/* <FeaturedInfo /> */}
       <Flex>
       <HStack spacing="24px">
