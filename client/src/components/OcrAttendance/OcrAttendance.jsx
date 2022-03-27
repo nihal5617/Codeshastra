@@ -1,5 +1,8 @@
+import { background, color } from '@chakra-ui/react';
+import { BorderAllRounded } from '@material-ui/icons';
 import React from 'react';
 import Tesseract from 'tesseract.js';
+import "./orcAttendance.css"
 
 // import './style.css';
 
@@ -30,11 +33,11 @@ const OcrAttendance = () => {
   };
 
   return (
-    <div className="container" style={{ height: '100vh',width:"80%",padding:"10px" }}>
+    <div className="container" style={{ height: '100vh',width:"80%",padding:"30px", backgroundColor:'ffffff',  borderRadius :'20px ', boxShadow:'10px #9E9E9E'}}>
       <div className="row h-100">
         <div className="col-md-5 mx-auto h-100 d-flex flex-column justify-content-center">
           {!isLoading && (
-            <h1 className="text-center py-5 mc-5">Image To Text</h1>
+            <h1 className="text-center heading py-5 mc-5">OCR Detection of Attendance</h1>
           )}
           {isLoading && (
             <>
@@ -53,12 +56,15 @@ const OcrAttendance = () => {
                 }
                 className="form-control mt-5 mb-2"
               />
+              <div className="bottom">
               <input
                 type="button"
                 onClick={handleSubmit}
                 className="btn btn-primary mt-5"
                 value="Convert"
               />
+              </div>
+              
             </>
           )}
           {!isLoading && text && (

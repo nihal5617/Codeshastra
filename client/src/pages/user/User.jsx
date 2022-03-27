@@ -47,15 +47,15 @@ export default function User() {
 return (
   <div className="user">
     <div className="userTitleContainer">
-      <h1 className="userTitle">Edit User</h1>
+      <h1 className="userTitle">Add Worker</h1>
       
     </div>
     <div className="userContainer">
       <div className="userShow">
         <div className="userShowTop">
           <img
-            src={data.image}
-            alt=""
+            src="https://picsum.photos/id/1/200/300"
+            alt="profile pic"
             className="userShowImg"
           />
           <div className="userShowTopTitle">
@@ -93,7 +93,7 @@ return (
               <label>Full Name</label>
               <input
                 type="text"
-                placeholder="Anna Becker"
+                placeholder="Enter full name"
                 className="userUpdateInput"
                 name="name"
                 onChange={handleChange}
@@ -103,7 +103,7 @@ return (
               <label>Email</label>
               <input
                 type="text"
-                placeholder="annabeck99@gmail.com"
+                placeholder="Enter email id"
                 className="userUpdateInput"
                 name="email"
                 onChange={handleChange}
@@ -112,7 +112,7 @@ return (
                 <label>Password</label>
                 <input
                   type="password"
-                  placeholder="******"
+                  placeholder="Enter password"
                   className="userUpdateInput"
                   name="password"
                   onChange={handleChange}
@@ -123,7 +123,7 @@ return (
               <label>Phone</label>
               <input
                 type="text"
-                placeholder="+1 123 456 67"
+                placeholder="Enter phone no."
                 className="userUpdateInput"
                 name="phone"
                 onChange={handleChange}
@@ -133,15 +133,15 @@ return (
               <label>Address</label>
               <input
                 type="text"
-                placeholder="Akola | Maharashtra"
+                placeholder="Enter address"
                 className="userUpdateInput"
                 name="address"
                 onChange={handleChange}
               />
             </div>
           </div>
-          <div className="userUpdateRight">
-            <div className="userUpdateUpload">
+          {/* <div className="userUpdateRight"> */}
+            {/* <div className="userUpdateUpload">
               <img
                 className="userUpdateImg"
                 src={form.file}
@@ -150,14 +150,15 @@ return (
               <label htmlFor="file">
                 <Publish className="userUpdateIcon" />
               </label>
-              {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} /> */}
+              <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} />  */}
               {/* <input type="file" onChange={(e) => {
                 console.log(
-                  e.target.files[0]      */}
-                {/* )}}/> */}
-            </div>
+                  e.target.files[0]     
+                 );}}
+                /> */}
+            {/* </div> */}
             <button className="userUpdateButton" type="submit">Create</button>
-          </div>
+          {/* </div> */}
         </form>
       </div>
     </div>

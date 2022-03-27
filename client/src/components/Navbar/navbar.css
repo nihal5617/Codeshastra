@@ -1,0 +1,23 @@
+
+.logo{
+    font-weight: bold;
+    font-size: 25px;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.logo:hover{
+    font-size: 26px;
+}
+
+.logout{
+    color: white;
+    background-color: black !important;
+
+}
+
+.logout:hover{
+    color: black;
+    background-color: white !important;
+    font-size: 15px;
+}

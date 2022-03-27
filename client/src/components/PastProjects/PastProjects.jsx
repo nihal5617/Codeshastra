@@ -25,7 +25,7 @@ function PastProjects() {
       position  = "Project Owner"
       daysTaken = "90"
       Workers = "50"
-
+      image="https://picsum.photos/id/1/200/300"
       />
        </Flex>
       </div>

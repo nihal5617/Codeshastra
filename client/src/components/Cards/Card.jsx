@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState,useEffect } from "react";
+import "./Card.css";
 
 export default function Card({position, pastProjects, onGoingProjects,image,url }) {
   const [name, setName] = useState([""]);
