@@ -118,7 +118,11 @@ class ProjectView(APIView):
             payload = jwt.decode(token, "lance", algorithms=["HS256"])
         except jwt.ExpiredSignatureError:
             raise AuthenticationFailed("Token Expired!")
-        project = Project.objects.get(Contractor_id=payload["id"])
+        contractor = User.objects.get(id=payload["id"])
+        if contractor:
+            project = Project.objects.get(Contractor_id=payload["id"])
+        else:
+            project = Project.objects.get(Contractor_id=1)
         print(project)
         serializer = ProjectSerializer(project)
         return Response(serializer.data)
