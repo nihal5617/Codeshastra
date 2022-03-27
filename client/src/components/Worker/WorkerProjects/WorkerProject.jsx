@@ -1,14 +1,22 @@
 import React from 'react'
-import CardProjects from '../../Cards/CardProjects';
-import ProjectDetails from '../../Projectdetails/ProjectDetails';
-import "./WorkerProject.css";
+import CardWorker from '../../Cards/CardWorker'
 
 function WorkerProject() {
   return (
-    <div className='container'>
-        <ProjectDetails/>
+    <div >
+        <Flex>
+        <CardWorker
+        name = "Pratik Wadke"
+        violations= "10"
+        attendance = "70"
+        position=""
+        image ="https://picsum.photos/id/1/200/300"
+        pastProjects= "20"
+      />
+        </Flex>
+      
     </div>
   )
 }
 
-export default WorkerProject
+export default WorkerProject;
