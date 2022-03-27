@@ -14,6 +14,8 @@ import OcrAttendance from "./components/OcrAttendance/OcrAttendance";
 import WorkersData from "./components/WorkersData/WorkersData";
 import PastProjects from "./components/PastProjects/PastProjects";
 import Dashboard from "./components/Worker/WorkerDashboard/dashboard";
+import WorkerProject from "./components/Worker/WorkerProjects/WorkerProject";
+import Details from "./components/Worker/WorkerDetails/Details";
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
@@ -26,37 +28,34 @@ function App() {
   return (
     <>
       {user ? (
-        user.title === "Worker" ? (
+        // user.position ? (
           <BrowserRouter>
             <Simple />
             <div className="container">
               <Dashboard />
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/addWorker" element={<User />} />
-                <Route path="/attendance" element={<UserList />} />
-                <Route path="/ocr" element={<OcrAttendance />} />
-                <Route path="/data" element={<WorkersData />} />
-                <Route path="/past" element={<PastProjects />} />
+                <Route path="/workerProject" element={<WorkerProject/>}/>
+                <Route path="/details" element ={<Details/>}/>
               </Routes>
             </div>
-          </BrowserRouter>
-        ) : (
-          <BrowserRouter>
-            <Simple />
-            <div className="container">
-              <Sidebar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/addWorker" element={<User />} />
-                <Route path="/attendance" element={<UserList />} />
-                <Route path="/ocr" element={<OcrAttendance />} />
-                <Route path="/data" element={<WorkersData />} />
-                <Route path="/past" element={<PastProjects />} />
-              </Routes>
-            </div>
-          </BrowserRouter>
-        )
+            </BrowserRouter>
+        // ) : (
+          // <BrowserRouter>
+          //   <Simple />
+          //   <div className="container">
+          //     <Sidebar />
+          //     <Routes>
+          //       <Route path="/" element={<Home />} />
+          //       <Route path="/addWorker" element={<User />} />
+          //       <Route path="/attendance" element={<UserList />} />
+          //       <Route path="/ocr" element={<OcrAttendance />} />
+          //       <Route path="/data" element={<WorkersData />} />
+          //       <Route path="/past" element={<PastProjects />} />
+          //     </Routes>
+          //   </div>
+            
+          // </BrowserRouter>
+        
       ) : (
         <BrowserRouter>
           <Routes>

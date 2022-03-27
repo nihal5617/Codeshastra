@@ -24,20 +24,21 @@ export default function Dashboard() {
     <div className="sidebar1">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Projects</h3>
+          <h3 className="sidebarTitle">Details</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Current Projects
-            </li>
+            <Link to="/details" className="link">
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
+                Details
+              </li>
             </Link>
-            <Link to="/past" className="link">
+
+            {/* <Link to="/past" className="link">
             <li className="sidebarListItem">
               <Apartment className="sidebarIcon" />
               Past Projects
             </li>
-            </Link>
+            </Link> */}
             {/* <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
               Sales
@@ -45,13 +46,12 @@ export default function Dashboard() {
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Workers</h3>
+          <h3 className="sidebarTitle">Projects</h3>
           <ul className="sidebarList">
-            <Link to="addWorker" className="link">
-
+            <Link to="/workerProject" className="link">
               <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Add Worker
+                <Timeline className="sidebarIcon" />
+                Projects
               </li>
             </Link>
             {/* <Link to="/products" className="link">
@@ -64,16 +64,16 @@ export default function Dashboard() {
               <AttachMoney className="sidebarIcon" />
               Transactions
             </li> */}
-            <Link to="/data" className="link">
+            {/* <Link to="/data" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
               Workers Data
             </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
-        
-        <div className="sidebarMenu">
+
+        {/* <div className="sidebarMenu">
           <h3 className="sidebarTitle">Attendance</h3>
           <ul className="sidebarList">
             
@@ -89,13 +89,13 @@ export default function Dashboard() {
               <DynamicFeed className="sidebarIcon" />
               Upload Attendance
             </li>
-            </Link>
-            {/* <li className="sidebarListItem">
+            </Link> */}
+        {/* <li className="sidebarListItem">
               <ChatBubbleOutline className="sidebarIcon" />
               Messages
-            </li> */}
+            </li>
           </ul>
-        </div>
+        </div> */}
         {/* <div className="sidebarMenu">
           <h3 className="sidebarTitle"></h3>
           <ul className="sidebarList">

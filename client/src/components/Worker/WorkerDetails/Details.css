@@ -1,0 +1,7 @@
+.container{
+    flex:4;
+    max-width: 700px;
+    max-height: 700px;
+    /* margin: auto; */
+    /* text-align: center; */
+}
