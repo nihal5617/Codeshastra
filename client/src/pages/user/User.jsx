@@ -150,7 +150,11 @@ return (
               <label htmlFor="file">
                 <Publish className="userUpdateIcon" />
               </label>
-              <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} />
+              {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setForm({...form,file: base64})} /> */}
+              {/* <input type="file" onChange={(e) => {
+                console.log(
+                  e.target.files[0]      */}
+                {/* )}}/> */}
             </div>
             <button className="userUpdateButton" type="submit">Create</button>
           </div>

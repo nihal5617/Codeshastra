@@ -20,6 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {"password": {"write_only": True}}
 
     def create(self, validated_data):
+        print("niha")
         password = validated_data.pop("password", None)
         instance = self.Meta.model(**validated_data)
         if password is not None:
@@ -50,3 +51,19 @@ class WorkerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Worker
         fields = UserSerializer.Meta.fields + ["Present", "Violations", "Absent"]
+
+        def create(self, validated_data):
+            print("saji;")
+            password = validated_data.pop("password", None)
+            instance = self.Meta.model(**validated_data)
+            if password is not None:
+                instance.set_password(password)
+            contractor_id = validated_data.pop("contractor", None)
+            if contractor_id is not None:
+                contractor = Contractor.objects.get(id=contractor_id)
+                instance.contractor = contractor
+            else:
+                print("error")
+
+            instance.save()
+            return instance

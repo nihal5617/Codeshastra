@@ -1,42 +1,62 @@
 import React from "react";
 import "./Details.css";
 import {
-  Heading,
-  Avatar,
-  Box,
-  Center,
-  Image,
-  Flex,
-  Text,
-  Stack,
-  Button,
-  useColorModeValue,
-} from "@chakra-ui/react";
+  CalendarToday,
+  LocationSearching,
+  MailOutline,
+  PermIdentity,
+  PhoneAndroid,
+  Publish,
+} from "@material-ui/icons";
 
 function Details() {
   const name = "Pratik Wadke";
   const violations = "10";
   const attendance = "50";
   const email = "pratikwadke02@gmail.com";
+  let data = JSON.parse(localStorage.getItem("profile"));
   return (
-    <div className="container">
-      <Flex>
-        <div className="card">
-          <Heading>{name}</Heading>
-          <br />
-          <Text>
-            Email: {email}
-            <br />
-            Attendance: {attendance}
-            <br />
-            Violations: {violations}
-            <br />
-          </Text>
+    <div className="user">
+      <div className="userTitleContainer">
+        <h1 className="userTitle">Edit User</h1>
+
+      </div>
+      <div className="userContainer">
+        <div className="userShow">
+          <div className="userShowTop">
+            <img
+              src={data.image}
+              alt=""
+              className="userShowImg"
+            />
+            <div className="userShowTopTitle">
+              <span className="userShowUsername">{data.name}</span>
+              <span className="userShowUserTitle">Worker</span>
+            </div>
+          </div>
+          <div className="userShowBottom">
+            <span className="userShowTitle">Account Details</span>
+            <div className="userShowInfo">
+              <PermIdentity className="userShowIcon" />
+              <span className="userShowInfoTitle">{data.email}</span>
+            </div>
+
+            <span className="userShowTitle">Contact Details</span>
+            <div className="userShowInfo">
+              <PhoneAndroid className="userShowIcon" />
+              <span className="userShowInfoTitle">{data.phone}</span>
+            </div>
+            <div className="userShowInfo">
+              <MailOutline className="userShowIcon" />
+              <span className="userShowInfoTitle">{data.email}</span>
+            </div>
+            <div className="userShowInfo">
+              <LocationSearching className="userShowIcon" />
+              <span className="userShowInfoTitle">{data.address}</span>
+            </div>
+          </div>
         </div>
-        <div className="imag">
-            <img src="https://picsum.photos/92/92?random=1" alt="Worker Imag" />
-        </div>
-      </Flex>
+      </div>
     </div>
   );
 }

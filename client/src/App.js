@@ -16,6 +16,7 @@ import PastProjects from "./components/PastProjects/PastProjects";
 import Dashboard from "./components/Worker/WorkerDashboard/dashboard";
 import WorkerProject from "./components/Worker/WorkerProjects/WorkerProject";
 import Details from "./components/Worker/WorkerDetails/Details";
+import Landing from "./components/Landing/Landing";
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
@@ -35,7 +36,7 @@ function App() {
               <Dashboard />
               <Routes>
                 <Route path="/workerProject" element={<WorkerProject/>}/>
-                <Route path="/details" element ={<Details/>}/>
+                <Route path="/" element ={<Details/>}/>
               </Routes>
             </div>
             </BrowserRouter>
@@ -60,6 +61,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Auth />} />
+            <Route path="/landing" element={<Landing/>}/>
           </Routes>
         </BrowserRouter>
       )}
