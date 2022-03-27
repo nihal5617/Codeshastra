@@ -33,7 +33,7 @@ import {
     //   getName();
     // }, []);
     return (
-      <Center py={6}>
+      <Center py={6} padding="10px">
         <Box
           maxW={"270px"}
           w={"full"}

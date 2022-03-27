@@ -9,7 +9,7 @@ import CardWorker from "../Cards/CardWorker"
 import axios from "axios";
 
 export default function WorkersData({}) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{"id":1,"name":"Nihal","email":"nihal@gmail.com","password":"pbkdf2_sha256$260000$GHsAdoYVYMss983JX3uzJZ$CPXevVk996RRQqTfU0kYO8RIQ43tmqPYfiL0cdTZelM=","lastname":null,"img":null,"phone":"8291638536","address":"Borivali","title":"Contractor","Present":40,"Violations":5,"Absent":10},{"id":31,"name":"Lance Correia","email":"abcd162aaa003@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0},{"id":32,"name":"Lance Correia","email":"abcd162aaa00dd3@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0},{"id":33,"name":"Lance Correia","email":"abcd162aaaa00dd3@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0}]);
   const [attendance,setAttendance] = useState(false)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function WorkersData({}) {
         })
         .then((response) => {
           console.log(response.data);
-          setData(response.data);
+          // setData([{"id":1,"name":"Nihal","email":"nihal@gmail.com","password":"pbkdf2_sha256$260000$GHsAdoYVYMss983JX3uzJZ$CPXevVk996RRQqTfU0kYO8RIQ43tmqPYfiL0cdTZelM=","lastname":null,"img":null,"phone":"8291638536","address":"Borivali","title":"Contractor","Present":40,"Violations":5,"Absent":10},{"id":31,"name":"Lance Correia","email":"abcd162aaa003@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0},{"id":32,"name":"Lance Correia","email":"abcd162aaa00dd3@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0},{"id":33,"name":"Lance Correia","email":"abcd162aaaa00dd3@gmail.com","password":"deadpool","lastname":null,"img":null,"phone":"08291638536","address":"kanderpada","title":"Worker","Present":0,"Violations":0,"Absent":0}]);
         })
         .catch((err) => console.log(err));
     };
