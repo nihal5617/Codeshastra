@@ -17,6 +17,7 @@ import Dashboard from "./components/Worker/WorkerDashboard/dashboard";
 import WorkerProject from "./components/Worker/WorkerProjects/WorkerProject";
 import Details from "./components/Worker/WorkerDetails/Details";
 import Landing from "./components/Landing/Landing";
+import NewProject from "./components/newproject/NewProject"
 // import { useLocation } from 'react-router-dom';
 // import { AUTH } from "./constants/actionTypes";
 
@@ -52,6 +53,7 @@ function App() {
                 <Route path="/ocr" element={<OcrAttendance />} />
                 <Route path="/data" element={<WorkersData />} />
                 <Route path="/past" element={<PastProjects />} />
+                <Route path="/newproject" element={<NewProject/>}/>
               </Routes>
             </div>
             

@@ -285,8 +285,6 @@ function Footer() {
               base: '4',
             }}
           >
-            <Image w="128px" h="38px" mr="6" src=""></Image>
-            <Image w="128px" h="38px" src=""></Image>
           </Box>
         </Box>
 

@@ -122,7 +122,9 @@ class ProjectView(APIView):
         if contractor:
             project = Project.objects.get(Contractor_id=payload["id"])
         else:
-            project = Project.objects.get(Contractor_id=1)
+            worker = Worker.objects.get(id=payload["id"])
+            print(worker)
+            project = Project.objects.get()
         print(project)
         serializer = ProjectSerializer(project)
         return Response(serializer.data)
@@ -140,4 +142,17 @@ class WorkerView(APIView):
             raise AuthenticationFailed("Token Expired!")
         workers = Worker.objects.filter(Contractor=payload["id"])
         serializer = WorkerSerializer(workers, many=True)
+        return Response(serializer.data)
+
+class WorkView(APIView):
+    def post(self, request):
+        token = request.data["jwt"]
+        if not token:
+            raise AuthenticationFailed("Unauthenticated!")
+        try:
+            payload = jwt.decode(token, "lance", algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed("Token Expired!")
+        worker = Worker.objects.get(id=payload["id"])
+        serializer = WorkerSerializer(worker)
         return Response(serializer.data)

@@ -25,7 +25,7 @@ function Details() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src={data.image}
+              src="https://picsum.photos/seed/picsum/200/300"
               alt=""
               className="userShowImg"
             />

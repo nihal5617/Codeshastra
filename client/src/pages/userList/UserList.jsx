@@ -36,7 +36,12 @@ export default function UserList() {
   }
   const handleSubmit=()=>{
     console.log(attendanceofworker);
-
+    axios
+        .post("http://127.0.0.1:8000/api/workers/attendance",attendanceofworker)
+        .then((response) => {
+          console.log(response.data);
+         })
+        .catch((err) => console.log(err));
   }
 
   const columns = [

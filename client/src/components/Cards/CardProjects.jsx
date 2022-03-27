@@ -34,7 +34,8 @@ import {
     // }, []);
     return (
       <Center py={6}>
-        <Box
+        <Box 
+          sx = {{paddingX: 2, marginX: 2}}
           maxW={"270px"}
           w={"full"}
           bg={useColorModeValue("white", "gray.800")}
@@ -42,7 +43,7 @@ import {
           rounded={"md"}
           overflow={"hidden"}
         >
-          <Flex justify={"center"} mt={12}>
+          <Flex justify={"center"} mt={12} >
             {/* <Avatar
                 size={'xl'}
                 src={

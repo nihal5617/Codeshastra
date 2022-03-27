@@ -224,7 +224,7 @@ const Auth = () => {
                     </Button>
                   </Stack>
                 )}
-                <GoogleLogin
+                {/* <GoogleLogin
                   clientId="983873906158-moqbtetckfo6ev76t591i5sagb40jr1a.apps.googleusercontent.com"
                   render={(renderProps) => (
                     <Button
@@ -244,7 +244,7 @@ const Auth = () => {
                   onSuccess={googleSuccess}
                   onFailure={googleError}
                   cookiePolicy="single_host_origin"
-                />
+                /> */}
                 {isSignup ? (
                   <Stack pt={6}>
                     <Text align={"center"}>
